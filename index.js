@@ -119,7 +119,7 @@ app.post('/activate', async (req, res) => {
   // If the license is invalid, exit early, *unless* the license is only
   // invalid because it does not have any machine activations yet.
   if (!meta.valid) {
-    switch (meta.constant) {
+    switch (meta.code) {
       case 'FINGERPRINT_SCOPE_MISMATCH': // Allow more than 1 activation if our license isn't node-locked
       case 'NO_MACHINES':
       case 'NO_MACHINE': {
